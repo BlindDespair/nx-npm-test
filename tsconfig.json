@@ -1,0 +1,17 @@
+{
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "target": "ES2022",
+    "strict": true,
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "baseUrl": ".",
+    "noImplicitOverride": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
+  }
+}

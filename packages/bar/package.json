@@ -1,0 +1,10 @@
+{
+  "name": "@blinddespair/bar",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    "types": "./src/index.ts",
+    "default": "./src/index.ts"
+  },
+  "scripts": {}
+}

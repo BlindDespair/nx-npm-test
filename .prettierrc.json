@@ -1,0 +1,8 @@
+{
+  "plugins": ["prettier-plugin-packagejson"],
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": false,
+  "proseWrap": "always",
+  "htmlWhitespaceSensitivity": "ignore"
+}

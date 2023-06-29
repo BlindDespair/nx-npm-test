@@ -1,0 +1,31 @@
+{
+  "name": "bar",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bar/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/bar",
+        "tsConfig": "packages/bar/tsconfig.lib.json",
+        "packageJson": "packages/bar/package.json",
+        "main": "packages/bar/src/index.ts",
+        "assets": ["packages/bar/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs bar {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/bar/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

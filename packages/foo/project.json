@@ -1,0 +1,31 @@
+{
+  "name": "foo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/foo/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/foo",
+        "tsConfig": "packages/foo/tsconfig.lib.json",
+        "packageJson": "packages/foo/package.json",
+        "main": "packages/foo/src/index.ts",
+        "assets": ["packages/foo/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs foo {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/foo/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
