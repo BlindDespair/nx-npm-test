@@ -2,12 +2,17 @@
   "name": "@blinddespair/foo",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "exports": {
     "types": "./src/index.ts",
-    "default": "./src/index.ts"
+    "node": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
   },
   "scripts": {},
   "dependencies": {
-    "@blinddespair/bar": "^0.0.0"
+    "@blinddespair/bar": "^0.0.0",
+    "@blinddespair/buzz": "^0.0.0"
   }
 }

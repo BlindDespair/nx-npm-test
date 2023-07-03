@@ -1,1 +1,1 @@
-export * from './lib/bar.module';
+export * from './lib/bar.module.js';

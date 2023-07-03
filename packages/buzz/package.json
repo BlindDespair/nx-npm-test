@@ -2,19 +2,32 @@
   "name": "@blinddespair/buzz",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "node": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
     },
     "./client": {
       "types": "./src/client/index.ts",
-      "default": "./src/client/index.ts"
+      "node": "./dist/client/index.cjs",
+      "import": "./dist/client/index.js",
+      "require": "./dist/client/index.cjs",
+      "default": "./dist/client/index.js"
     },
     "./server": {
       "types": "./src/client/index.ts",
-      "default": "./src/client/index.ts"
+      "node": "./dist/server/index.cjs",
+      "import": "./dist/server/index.js",
+      "require": "./dist/server/index.cjs",
+      "default": "./dist/server/index.js"
     }
   },
-  "scripts": {}
+  "scripts": {
+    "build": "nx run buzz:build"
+  },
+  "dependencies": {}
 }

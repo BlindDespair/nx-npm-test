@@ -5,19 +5,24 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/bar",
+        "outputPath": "packages/bar/dist",
         "tsConfig": "packages/bar/tsconfig.lib.json",
-        "packageJson": "packages/bar/package.json",
         "main": "packages/bar/src/index.ts",
-        "assets": ["packages/bar/*.md"]
+        "format": ["esm", "cjs"],
+        "sourcemap": "linked",
+        "generatePackageJson": true
       }
     },
-    "publish": {
-      "command": "node tools/scripts/publish.mjs bar {args.ver} {args.tag}",
+    "prepare": {
+      "command": "node tools/scripts/prepare.mjs bar",
       "dependsOn": ["build"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs bar {args.tag}",
+      "dependsOn": ["prepare"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",

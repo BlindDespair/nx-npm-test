@@ -1,4 +1,3 @@
 export function server(): boolean {
-    return true;
-  }
-  
+  return true;
+}

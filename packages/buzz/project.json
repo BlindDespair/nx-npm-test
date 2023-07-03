@@ -5,19 +5,29 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/buzz",
+        "outputPath": "packages/buzz/dist",
         "tsConfig": "packages/buzz/tsconfig.lib.json",
-        "packageJson": "packages/buzz/package.json",
         "main": "packages/buzz/src/index.ts",
-        "assets": ["packages/buzz/*.md"]
+        "format": ["esm", "cjs"],
+        "additionalEntryPoints": [
+          "packages/buzz/src/client/index.ts",
+          "packages/buzz/src/server/index.ts"
+        ],
+        "sourcemap": "linked",
+        "platform": "neutral",
+        "generatePackageJson": true
       }
     },
-    "publish": {
-      "command": "node tools/scripts/publish.mjs buzz {args.ver} {args.tag}",
+    "prepare": {
+      "command": "node tools/scripts/prepare.mjs buzz",
       "dependsOn": ["build"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs buzz {args.tag}",
+      "dependsOn": ["prepare"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",

@@ -1,1 +1,1 @@
-export * from './lib/buzz';
+export * from './buzz.js';
