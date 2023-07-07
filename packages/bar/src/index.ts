@@ -1,1 +1,1 @@
-export * from './lib/bar.module.js';
+export * from './public-api.js';

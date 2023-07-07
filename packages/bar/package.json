@@ -4,11 +4,8 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    "types": "./src/index.ts",
-    "node": "./dist/index.cjs",
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.js"
+    "types": "./src/public-api.ts",
+    "default": "./dist/public-api.js"
   },
   "scripts": {}
 }

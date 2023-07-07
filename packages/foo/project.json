@@ -10,11 +10,12 @@
       "options": {
         "outputPath": "packages/foo/dist",
         "tsConfig": "packages/foo/tsconfig.lib.json",
-        "main": "packages/foo/src/index.ts",
-        "format": ["esm", "cjs"],
+        "main": "packages/foo/src/public-api.ts",
+        "format": ["esm"],
         "sourcemap": "linked",
         "external": ["@blinddespair/*"],
-        "generatePackageJson": true
+        "generatePackageJson": true,
+        "bundle": false
       }
     },
     "prepare": {

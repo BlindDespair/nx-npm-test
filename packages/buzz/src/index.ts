@@ -1,1 +1,1 @@
-export * from './buzz.js';
+export * from './public-api.js';

@@ -10,15 +10,16 @@
       "options": {
         "outputPath": "packages/buzz/dist",
         "tsConfig": "packages/buzz/tsconfig.lib.json",
-        "main": "packages/buzz/src/index.ts",
-        "format": ["esm", "cjs"],
+        "main": "packages/buzz/src/public-api.ts",
+        "format": ["esm"],
         "additionalEntryPoints": [
-          "packages/buzz/src/client/index.ts",
-          "packages/buzz/src/server/index.ts"
+          "packages/buzz/src/client/public-api.ts",
+          "packages/buzz/src/server/public-api.ts"
         ],
         "sourcemap": "linked",
         "platform": "neutral",
-        "generatePackageJson": true
+        "generatePackageJson": true,
+        "bundle": false
       }
     },
     "prepare": {

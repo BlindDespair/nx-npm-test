@@ -10,10 +10,11 @@
       "options": {
         "outputPath": "packages/bar/dist",
         "tsConfig": "packages/bar/tsconfig.lib.json",
-        "main": "packages/bar/src/index.ts",
-        "format": ["esm", "cjs"],
+        "main": "packages/bar/src/public-api.ts",
+        "format": ["esm"],
         "sourcemap": "linked",
-        "generatePackageJson": true
+        "generatePackageJson": true,
+        "bundle": false
       }
     },
     "prepare": {

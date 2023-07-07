@@ -1,1 +1,1 @@
-export * from './lib/foo.module.js';
+export * from './public-api.js';

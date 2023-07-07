@@ -3,27 +3,28 @@
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
+  "imports": {
+    "#client": {
+      "types": "./src/client/index.ts",
+      "default": "./src/client/index.js"
+    },
+    "#server": {
+      "types": "./src/server/index.ts",
+      "default": "./src/server/index.js"
+    }
+  },
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "node": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+      "types": "./src/public-api.ts",
+      "default": "./dist/public-api.js"
     },
     "./client": {
-      "types": "./src/client/index.ts",
-      "node": "./dist/client/index.cjs",
-      "import": "./dist/client/index.js",
-      "require": "./dist/client/index.cjs",
-      "default": "./dist/client/index.js"
+      "types": "./src/client/public-api.ts",
+      "default": "./dist/client/public-api.js"
     },
     "./server": {
-      "types": "./src/client/index.ts",
-      "node": "./dist/server/index.cjs",
-      "import": "./dist/server/index.js",
-      "require": "./dist/server/index.cjs",
-      "default": "./dist/server/index.js"
+      "types": "./src/client/public-api.ts",
+      "default": "./dist/server/public-api.js"
     }
   },
   "scripts": {

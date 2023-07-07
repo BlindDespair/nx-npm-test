@@ -1,1 +1,2 @@
-export {server} from './server.js';
+export {server} from './public-api.js';
+export {privateServer} from './private-server.js';

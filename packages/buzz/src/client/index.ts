@@ -1,1 +1,1 @@
-export {client} from './client.js';
+export {client} from './public-api.js';
